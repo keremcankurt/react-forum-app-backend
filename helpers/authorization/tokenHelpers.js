@@ -4,7 +4,7 @@ const sendJwtToClient = (user, res) => {
     return res.cookie("access_token", token, {
       httpOnly: true,
       secure: true, // "SameSite=None" kullanırken bu değerin true olarak ayarlı olduğundan emin olun
-      sameSite: "None", // Çapraz site kullanımı için SameSite değerini None olarak ayarlayın
+      sameSite: "none", // Çapraz site kullanımı için SameSite değerini None olarak ayarlayın
       expires: new Date(Date.now() + parseInt(JWT_COOKIE) * 1000),
     });
 
