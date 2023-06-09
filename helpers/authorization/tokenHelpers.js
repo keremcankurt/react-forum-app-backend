@@ -6,7 +6,7 @@ const sendJwtToClient = (user, res) => {
       secure: true, // "SameSite=None" kullanırken bu değerin true olarak ayarlı olduğundan emin olun
       sameSite: "none", // Çapraz site kullanımı için SameSite değerini None olarak ayarlayın
       expires: new Date(Date.now() + parseInt(JWT_COOKIE) * 1000),
-    });
+    })
 
       .status(200)
       .json({
