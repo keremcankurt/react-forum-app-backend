@@ -4,7 +4,7 @@ const sendJwtToClient = (user, res) => {
     return res
       .cookie("access_token", token, {
         httpOnly: true,
-        secure: true,
+        secure: false,
         expires: new Date(Date.now() + parseInt(JWT_COOKIE) * 1000),
       })
       .status(200)
