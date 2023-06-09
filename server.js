@@ -4,11 +4,7 @@ const cors = require('cors');
 const cookieParser = require("cookie-parser")
 const connectDatabase = require('../helpers/database/connectDatabase');
 const router = require('./routers');
-const customErrorHandler = require('../middlewares/errors/customErrorHandler');
 
-dotenv.config( {
-    path: './config/env/config.env'
-});
 
 connectDatabase();
 
