@@ -1,11 +1,10 @@
 const sendJwtToClient = (user, res) => {
     const token = user.generateJwtFromUser();
-    console.log(token);
     const { JWT_COOKIE, NODE_ENV } = process.env;
     return res
       .cookie("access_token", token, {
         httpOnly: true,
-        secure: false,
+        secure: true,
         expires: new Date(Date.now() + parseInt(JWT_COOKIE) * 1000),
       })
       .status(200)
