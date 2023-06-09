@@ -2,7 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const cookieParser = require("cookie-parser")
-const connectDatabase = require('../helpers/database/connectDatabase');
+const connectDatabase = require('./helpers/database/connectDatabase');
 const router = require('./routers');
 dotenv.config( {
     path: './config/env/config.env'
