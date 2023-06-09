@@ -13,7 +13,7 @@ const register = async(req, res, next) => {
     const newUser = new User(infos);
     
 
-    const confirmAccountUrl = `http://localhost:3000/confirmaccount?id=${newUser._id}`;
+    const confirmAccountUrl = `https://kckforum.netlify.app/confirmaccount?id=${newUser._id}`;
     const emailTemplate = `
     <h3>
     Confirm your account
@@ -76,7 +76,7 @@ const forgotPassword  = async(req, res, next) => {
     const {email} = req.body;
     const user = await User.findOne({email});
     const forgotPasswordToken = user.getTempTokenFromUser();
-    const forgotPasswordUrl = `http://localhost:3000/forgotpassword/change/?forgotPasswordToken=${forgotPasswordToken}`;
+    const forgotPasswordUrl = `https://kckforum.netlify.app/forgotpassword/change/?forgotPasswordToken=${forgotPasswordToken}`;
     const emailTemplate = `
     <h3>
     Reset your password
