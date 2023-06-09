@@ -3,6 +3,7 @@ const sendJwtToClient = (user, res) => {
     const { JWT_COOKIE, NODE_ENV } = process.env;
     return res
       .cookie("access_token", token, {
+        httpOnly: true,
         secure: NODE_ENV === "production" ? true : false,
         expires: new Date(Date.now() + parseInt(JWT_COOKIE) * 1000),
       })
